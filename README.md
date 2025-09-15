@@ -162,3 +162,19 @@ docker compose -f ./docker-compose.yml up -d
 
 docker logs positron-ds-env
 ```
+
+## Acknowledgements
+
+Many thanks to the following folks:
+
+-   [Andrew Heiss](https://github.com/andrewheiss) for the [excellent guide for connecting Positron to Docker images via SSH](https://www.andrewheiss.com/blog/2025/07/05/positron-ssh-docker/)
+
+-   [The Rocker Project Team](https://www.rocker-project.org/) for the [Rocker](https://hub.docker.com/u/rocker) Docker images
+
+-   [Posit](https://posit.org/) for the very delightful [Positron IDE](https://positron.posit.co/)
+
+-   [Docker](https://www.docker.com/) for the [Docker](https://hub.docker.com/) container platform that makes this workflow possible
+
+-   My Gen-AI buddies, Claude, GPT-5, and Gemini, for their very helpful explanations and code completions 🤖
+
+I would also like to acknowledge the contributions of the many open source maintainers and developers whose work went into creating the powerful open source tools that allow this workflow to exist. There are too many of you to name, and that is the coolest part 🙂 My heartfelt thanks to all of you.
