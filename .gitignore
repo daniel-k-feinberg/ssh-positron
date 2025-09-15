@@ -75,7 +75,7 @@ _freeze/
 # reproducible libraries
 /renv/
 /.venv/
-*/ds_dev.egg-info/*
+/*.egg-info/
 
 # direnv
 .envrc.local
