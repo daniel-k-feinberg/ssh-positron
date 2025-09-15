@@ -61,19 +61,19 @@ ssh -p 2222 rstudio@localhost
 If you changed the Dockerfile or docker-compose.yml file:
 
 ```
-docker compose -f .devcontainer/docker-compose.yml build
+docker compose -f ./docker-compose.yml build
 ```
 
 Then start:
 
 ```
-docker compose -f .devcontainer/docker-compose.yml up -d
+docker compose -f ./docker-compose.yml up -d
 ```
 
 ## Verifying SSHD
 
 ```
-docker compose -f .devcontainer/docker-compose.yml ps
+docker compose -f ./docker-compose.yml ps
 ssh positron-docker 'whoami && hostname && ls -ld ~/.ssh'
 ```
 
@@ -86,7 +86,7 @@ docker logs positron-ds-env | tail -n 80
 Check auth log:
 
 ```
-docker compose -f .devcontainer/docker-compose.yml exec tidyverse bash -c 'tail -n 80 /var/log/auth.log'
+docker compose -f ./docker-compose.yml exec tidyverse bash -c 'tail -n 80 /var/log/auth.log'
 ```
 
 ## Regenerating Keys (optional)
@@ -154,11 +154,11 @@ You will need to repeat this process of removing the old key each time you run `
 ## To shut down and rebuild container without cache
 
 ``` bash
-docker compose -f .devcontainer/docker-compose.yml down -v
+docker compose -f ./docker-compose.yml down -v
 
-docker compose -f .devcontainer/docker-compose.yml build --no-cache
+docker compose -f ./docker-compose.yml build --no-cache
 
-docker compose -f .devcontainer/docker-compose.yml up -d
+docker compose -f ./docker-compose.yml up -d
 
 docker logs positron-ds-env
 ```
