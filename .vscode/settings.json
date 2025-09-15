@@ -1,0 +1,239 @@
+{
+    // -------------------------------------------------------------------------
+    // -- EDITOR: TYPOGRAPHY & FONT
+    // -- Settings related to how text looks in the editor.
+    // -------------------------------------------------------------------------
+    "editor.fontFamily": "'mona sans', sans-serif",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.tabSize": 4,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    // -------------------------------------------------------------------------
+    // -- EDITOR: CURSOR & SELECTION
+    // -- Settings for the cursor, selection, and scrolling behavior.
+    // -------------------------------------------------------------------------
+    "editor.cursorStyle": "line-thin",
+    "editor.cursorBlinking": "smooth",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderLineHighlight": "gutter",
+    "editor.roundedSelection": true,
+    "editor.smoothScrolling": true,
+    "editor.scrollBeyondLastLine": true,
+    "editor.stickyScroll.enabled": false,
+    // -------------------------------------------------------------------------
+    // -- EDITOR: FORMATTING & WHITESPACE
+    // -- Controls for auto-formatting, indentation, and whitespace rendering.
+    // -------------------------------------------------------------------------
+    "editor.defaultFormatter": "Posit.air-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.autoIndent": "full",
+    "editor.tabCompletion": "on",
+    "editor.renderWhitespace": "none",
+    "diffEditor.ignoreTrimWhitespace": false,
+    // -------------------------------------------------------------------------
+    // -- EDITOR: WORD WRAP & RULERS
+    // -- Settings for how lines wrap in the editor.
+    // -------------------------------------------------------------------------
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 113,
+    // -------------------------------------------------------------------------
+    // -- EDITOR: MINIMAP
+    // -- Configuration for the code minimap on the side.
+    // -------------------------------------------------------------------------
+    "editor.minimap.enabled": false,
+    "editor.minimap.renderCharacters": true,
+    "editor.minimap.size": "proportional",
+    "editor.minimap.showSlider": "always",
+    // -------------------------------------------------------------------------
+    // -- EDITOR: SUGGESTIONS & HOVER
+    // -- Intellisense, hover popups, and other suggestions.
+    // -------------------------------------------------------------------------
+    "editor.inlineSuggest.enabled": true,
+    "editor.hover.delay": 2000,
+    "editor.parameterHints.enabled": true,
+    "editor.accessibilitySupport": "off",
+    // -------------------------------------------------------------------------
+    // -- WORKBENCH & UI
+    // -- General appearance and behavior of the VS Code window.
+    // -------------------------------------------------------------------------
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.activityBar.location": "top",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 12,
+    "breadcrumbs.enabled": true,
+    // -------------------------------------------------------------------------
+    // -- EXPLORER & FILE MANAGEMENT
+    // -- Settings for the file explorer and file operations.
+    // -------------------------------------------------------------------------
+    "files.autoSave": "afterDelay",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.compactFolders": false,
+    "files.associations": {
+        "*.qmd": "quarto"
+    },
+    // -------------------------------------------------------------------------
+    // -- INTEGRATED TERMINAL
+    // -- Settings for the built-in terminal.
+    // -------------------------------------------------------------------------
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.tabs.location": "left",
+    // -------------------------------------------------------------------------
+    // -- OUTPUT & DEBUG PANELS
+    // -- Settings for the Output, Debug, and other panels.
+    // -------------------------------------------------------------------------
+    "output.fontSize": 13,
+    "debug.console.fontSize": 12,
+    "console.fontLigatures": true,
+    "terminal.integrated.lineHeight": 0,
+    // -------------------------------------------------------------------------
+    // -- SOURCE CONTROL: GIT
+    // -- Configuration for Git integration.
+    // -------------------------------------------------------------------------
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.suggestSmartCommit": false,
+    "git.smartCommitChanges": "all",
+    "git.postCommitCommand": "sync",
+    "git.openRepositoryInParentFolders": "always",
+    "git.ignoreMissingGitWarning": true,
+    "git.decorations.enabled": true,
+    "scm.diffDecorations": "all",
+    // -------------------------------------------------------------------------
+    // -- NOTEBOOKS & INTERACTIVE WINDOW
+    // -- Settings for Jupyter-style notebooks and interactive panes.
+    // -------------------------------------------------------------------------
+    "notebook.defaultFormatter": "Posit.air-vscode",
+    "notebook.markup.fontSize": 0,
+    "notebook.output.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "notebook.output.fontSize": 12,
+    "notebook.lineNumbers": "on",
+    "notebook.outline.showMarkdownHeadersOnly": false,
+    "notebook.outline.showCodeCellSymbols": false,
+    "interactiveWindow.executeWithShiftEnter": true,
+    // -------------------------------------------------------------------------
+    // -- LANGUAGE-SPECIFIC SETTINGS
+    // -- Overrides for specific languages.
+    // -------------------------------------------------------------------------
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "[quarto]": {
+        "editor.fontFamily": "'mona sans', sans-serif",
+        "editor.fontSize": 16,
+        "editor.lineHeight": 1.4,
+        "editor.lineNumbers": "on",
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 113,
+        "editor.defaultFormatter": "quarto.quarto",
+        "editor.formatOnSave": true
+    },
+    "[r]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Posit.air-vscode"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    // -------------------------------------------------------------------------
+    // -- EXTENSIONS
+    // -- Settings for specific extensions.
+    // -------------------------------------------------------------------------
+    // -- GitHub Copilot
+    "github.copilot.enable": {
+        "*": true,
+        "quarto": true,
+        "rmd": true
+    },
+    // -- Quarto
+    "quarto.render.previewType": "external",
+    "quarto.visualEditor.fontFamily": "'mona sans', sans-serif",
+    "quarto.visualEditor.fontSize": 16,
+    "quarto.visualEditor.lineNumbers": true,
+    "quarto.visualEditor.spellingDictionary": "en_CA",
+    // -- Python
+    "python.pythonPath": ".venv/bin/python",
+    "python.terminal.activateEnvironment": false,
+    // -- LTeX (LanguageTool)
+    "ltex.enabled": [
+        "latex",
+        "quarto",
+        "qmd"
+    ],
+    "ltex.language": "en-US",
+    "ltex.diagnosticSeverity": "information",
+    // -- write-good Linter
+    "write-good.languages": [
+        "markdown",
+        "rmd",
+        "quarto",
+        "qmd",
+        "rmarkdown"
+    ],
+    "write-good.write-good-config": {
+        "eprime": true
+    },
+    "write-good.only-lint-on-save": true,
+    // -- Spell Right
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "quarto",
+        "qmd",
+        "rmd",
+        "rmarkdown"
+    ],
+    "spellright.addToSystemDictionary": true,
+    "spellright.configurationScope": "user",
+    "spellright.groupDictionaries": false,
+    "spellright.recheckOnSave": false,
+    "spellright.suggestionsInHints": false,
+    "spellright.ignoreRegExps": [
+        "/(\\.?)(gif|png)/g"
+    ],
+    "spellright.ignoreRegExpsByClass": {
+        "markdown": [
+            "/&amp;/g",
+            "/&nbsp;/g"
+        ],
+        "cpp": [
+            "/#include\\s+\\\".+\\\"/g"
+        ],
+        "html": [
+            "/<script>[^]*?<\/script>/gm"
+        ],
+        "latex": [
+            "/\\\\begin{minted}[^]*?\\\\end{minted}/gm"
+        ]
+    },
+    // -- Miscellaneous Extensions
+    "remote.autoForwardPortsSource": "hybrid",
+    "insert-unicode.favorites": {
+        "directories": {},
+        "items": [
+            [
+                769
+            ]
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+# docker-compose.yml
+services:
+    tidyverse:
+        platform: linux/amd64
+        build:
+            context: "./.devcontainer"
+            dockerfile: "Dockerfile"
+        container_name: positron-ds-env
+        ports:
+            - "8787:8787"  # RStudio Server
+            - "3838:3838"  # Shiny Server
+            - "2222:22"    # SSH
+        environment:
+            - DISABLE_AUTH=true  # Disable authentication for RStudio Server
+        volumes:
+            - .:/home/rstudio/project
+            - ~/.ssh/id_ed25519.pub:/home/rstudio/.ssh/authorized_keys:ro
+        healthcheck:
+            test: ["CMD-SHELL", "ps -o comm=1 1 | grep -q sshd && netstat -tln 2>/dev/null | grep -q ':22 ' || ss -tln | grep -q ':22 '"]
+            interval: 30s
+            timeout: 5s
+            retries: 5
+            start_period: 10s

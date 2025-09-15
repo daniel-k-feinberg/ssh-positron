@@ -47,3 +47,35 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+#python
+*.pyc
+*.pyo
+__pycache__/
+
+#cache
+*_files/
+*_cache/
+test_files/
+_freeze/
+/.quarto/
+.jupyter_cache
+*.DS_Store
+
+#output
+/output/
+/site/
+/src/exports/
+*.html
+*.tex
+
+#datafiles
+/data/
+
+# reproducible libraries
+/renv/
+/.venv/
+*/ds_dev.egg-info/*
+
+# direnv
+.envrc.local
