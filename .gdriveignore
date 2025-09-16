@@ -1,6 +1,9 @@
 # rclone filter rules based on .gitignore
 # Note the '- ' prefix and '/**' for directories
 
+# Git folder
+- /.git/**
+
 # History files
 - .Rhistory
 - .Rapp.history
@@ -38,9 +41,6 @@
 # Temporary files created by R markdown
 - *.utf8.md
 - *.knit.md
-
-# R Environment Variables
-- .Renviron
 
 # pkgdown site
 - docs/**
