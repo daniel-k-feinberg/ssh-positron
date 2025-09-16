@@ -165,10 +165,16 @@ docker logs positron-ds-env
 
 # Using rclone with gdrive
 
-## One time sync from local folder to google drive (can add "--dry-run -vv" to test/debug)
+## One time sync **from local folder** to Google Drive (can add "--dry-run -vv" to test/debug)
 
 ```{bash}
 rclone sync . "gdrive:remote/file/path/in/drive" --filter-from .gdriveignore -P
+```
+
+## One time sync **from Google Drive** to local folder (can add "--dry-run -vv" to test/debug)
+
+```{bash}
+rclone sync "gdrive:remote/file/path/in/drive" . -P
 ```
 
 ## Mounting
