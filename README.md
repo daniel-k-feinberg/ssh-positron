@@ -163,7 +163,29 @@ docker compose -f ./docker-compose.yml up -d
 docker logs positron-ds-env
 ```
 
-## Acknowledgements
+# Using rclone with gdrive
+
+## One time sync from local folder to google drive (can add "--dry-run -vv" to test/debug)
+
+```{bash}
+rclone sync . "gdrive:remote/file/path/in/drive" --filter-from .gdriveignore -P
+```
+
+## Mounting
+
+### To mount a local folder for reflecting real time changes
+
+```{bash}
+rclone mount gdrive:path/to/remote/folder ~/gdrive_mounts/path/to/local/project/folder --vfs-cache-mode full --daemon --log-file ~/rclone-mount.log
+```
+
+### To unmount
+
+```{bash}
+umount ~/gdrive_mounts/ssh_project
+```
+
+# Acknowledgements
 
 Many thanks to the following folks:
 
