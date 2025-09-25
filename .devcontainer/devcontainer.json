@@ -1,0 +1,92 @@
+{
+    "name": "Data Analysis Env",
+    // Run container as rstudio user for dev tooling even though sshd (PID 1) runs as root
+    "remoteUser": "rstudio",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    // Install VS Code extensions
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // git & github tools
+                "donjayamanne.githistory",
+                "GitHub.codespaces",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "GitHub.vscode-github-actions",
+                // conveniences
+                "ms-azuretools.vscode-docker",
+                "peakchen90.open-html-in-browser",
+                "mechatroner.rainbow-csv",
+                "oderwat.indent-rainbow",
+                //"cweijan.vscode-office",
+                "tomoki1207.pdf",
+                // snippet creator
+                "wware.snippet-creator",
+                // data analysis tools
+                "ms-toolsai.datawrangler",
+                "helixquar.randomeverything",
+                // spell check
+                //"ban.spellright",
+                //"ltex-plus.vscode-ltex-plus",
+                "ms-vscode.wordcount",
+                //"travisthetechie.write-good-linter",
+                // conventional commits
+                //"vivaxy.vscode-conventional-commits",
+                //"fletch-r.conventional-commit-builder",
+                // language support
+                "quarto.quarto",
+                "brunnerh.insert-unicode",
+                //"james-yu.latex-workshop",
+                "REditorSupport.r",
+                "RDebugger.r-debugger",
+                //"TakumiI.markdowntable",
+                //"posit.air-vscode",
+                //python and jupyter support
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "ms-toolsai.jupyter-cell-tags",
+                "ms-toolsai.jupyter",
+                // theming
+                "GitHub.github-vscode-theme",
+                "hassanoof.theme",
+                "PKief.material-icon-theme",
+                "daylerees.rainglow",
+                // vscode behavior
+                //"vsls-contrib.codetour",
+                "BriteSnow.vscode-toggle-quotes",
+                "dqisme.sync-scroll",
+                "ms-vscode.vscode-speech",
+                // fun
+                "tonybaloney.vscode-pets"
+            ],
+            "settings": {
+                "r.rterm.linux": "/usr/local/bin/R",
+                "r.rpath.linux": "/usr/local/bin/R",
+                "python.pythonPath": ".venv/bin/python",
+                "r.bracketedPaste": true,
+                "r.plot.useHttpgd": false
+            }
+        }
+    },
+    // Forward Shiny app and RStudio ports
+    "forwardPorts": [
+        3838,
+        8787,
+        2222
+    ],
+    "portsAttributes": {
+        "3838": {
+            "label": "Shiny App",
+            "onAutoForward": "notify"
+        },
+        "8787": {
+            "label": "RStudio Server",
+            "onAutoForward": "ignore"
+        }
+    },
+    "postCreateCommand": "neofetch"
+}
