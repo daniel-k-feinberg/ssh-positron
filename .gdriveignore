@@ -51,12 +51,12 @@
 # RStudio Connect folder
 - rsconnect/**
 
-#python
+# python
 - *.pyc
 - *.pyo
 - __pycache__/**
 
-#cache
+# cache
 - *_files/**
 - *_cache/**
 - test_files/**
@@ -65,7 +65,7 @@
 - .jupyter_cache/**
 - *.DS_Store
 
-#output
+# output
 - /output/**
 - /site/**
 - *.tex
