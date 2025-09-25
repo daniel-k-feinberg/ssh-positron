@@ -76,7 +76,7 @@
     "forwardPorts": [
         3838,
         8787,
-        2222
+        22
     ],
     "portsAttributes": {
         "3838": {
@@ -85,6 +85,10 @@
         },
         "8787": {
             "label": "RStudio Server",
+            "onAutoForward": "ignore"
+        },
+        "22": {
+            "label": "SSH Server",
             "onAutoForward": "ignore"
         }
     },
