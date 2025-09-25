@@ -163,6 +163,11 @@ docker compose -f ./docker-compose.yml up -d
 docker logs positron-ds-env
 ```
 
+# Using symlink for folders to sync to Gdrive
+```{bash}
+ln -s "/path/to/your/shared/GoogleDrive/folder" "/path/to/working/directory/in/nonGdrive/folder"
+```
+
 # Using rclone with gdrive
 
 ## One time sync **from local folder** to Google Drive (can add "--dry-run -vv" to test/debug)
