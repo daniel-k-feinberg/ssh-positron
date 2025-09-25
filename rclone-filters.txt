@@ -1,0 +1,12 @@
+# =============================================================
+# rclone filter rules: Include ONLY the src/ and data/ folders
+# =============================================================
+
+# 1. Explicitly include the 'src' directory and all its contents.
++ /src/**
+
+# 2. Explicitly include the 'data' directory and all its contents.
++ /data/**
+
+# 3. Exclude everything else. This rule MUST be the last line.
+- **

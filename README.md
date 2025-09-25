@@ -1,12 +1,10 @@
-# Docker container environment for SSH access via mapped folder
+# Positron SSH Env
 
-Container for connecting Positron via SSH and mapping local folder.
+Container for connecting Positron to a Docker container via SSH and mapping a local folder.
 
 ## SSH Access to Dev Container
 
 This project exposes an OpenSSH server inside the dev container so external tools (e.g. Positron / RStudio / other IDEs) can attach.
-
-### Summary
 
 -   Host machine exposes container port 22 at localhost:2222
 -   User inside container: `rstudio`
@@ -117,7 +115,7 @@ Then rebuild/restart so the updated public key mounts in.
 
 ### If I delete or rebuild the container
 
-This is a security feature of SSH: Your computer stores a unique cryptographic "fingerprint" (a host key) for every server it connects to in the file `~/.ssh/known_hosts`.
+Your computer stores a unique cryptographic "fingerprint" (a host key) for every server it connects to in the file `~/.ssh/known_hosts`.
 
 Every time you completely rebuild your Docker container, the SSH server inside it generates a *brand new, unique* host key.
 
@@ -163,40 +161,53 @@ docker compose -f ./docker-compose.yml up -d
 docker logs positron-ds-env
 ```
 
-# Using symlink for folders to sync to Gdrive
+## Container Networking
+
+-   To see all running docker containers, run:
+
+    -   `docker ps`
+
+-   To disconnect container from internet on host machine, run:
+
+    -   `docker network disconnect bridge <image_name>`
+
+-   To reconnect container to internet on host machine, run:
+
+    -   `docker network connect bridge <image_name>`
+
+-   To test internet connection within container, run:
+
+    -   `curl www.example.com`
+
+## Using rclone with gdrive
+
+### One time sync **from local folder** to Google Drive (can add "--dry-run -vv" to test/debug)
+
 ```{bash}
-ln -s "/path/to/your/shared/GoogleDrive/folder" "/path/to/working/directory/in/nonGdrive/folder"
+rclone sync . "gdrive:remote/file/path/in/drive" --filter-from rclone-filters.txt -P
 ```
 
-# Using rclone with gdrive
-
-## One time sync **from local folder** to Google Drive (can add "--dry-run -vv" to test/debug)
+### One time sync **from Google Drive** to local folder (can add "--dry-run -vv" to test/debug)
 
 ```{bash}
-rclone sync . "gdrive:remote/file/path/in/drive" --filter-from .gdriveignore -P
+rclone sync "gdrive:remote/file/path/in/drive" . --filter-from rclone-filters.txt -P
 ```
 
-## One time sync **from Google Drive** to local folder (can add "--dry-run -vv" to test/debug)
+### Mounting
 
-```{bash}
-rclone sync "gdrive:remote/file/path/in/drive" . -P
-```
-
-## Mounting
-
-### To mount a local folder for reflecting real time changes
+#### To mount a local folder for reflecting real time changes
 
 ```{bash}
 rclone mount gdrive:path/to/remote/folder ~/gdrive_mounts/path/to/local/project/folder --vfs-cache-mode full --daemon --log-file ~/rclone-mount.log
 ```
 
-### To unmount
+#### To unmount
 
 ```{bash}
 umount ~/gdrive_mounts/ssh_project
 ```
 
-# Acknowledgements
+## Acknowledgements
 
 Many thanks to the following folks:
 
